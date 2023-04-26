@@ -61,9 +61,23 @@
   transition: 0.5s;
 }
 
+#admin-menu {
+  animation: slide-right 0.5s ease-in-out;
+  transition: 0.5s;
+}
+
 @keyframes slide-left {
   from {
     transform: translateX(350px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes slide-right {
+  from {
+    transform: translateX(-350px);
   }
   to {
     transform: translateX(0px);

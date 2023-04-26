@@ -12,8 +12,8 @@ function SimplePlans() {
   return (
     <>
       <Box
-        sx={{ width: '100%', height: 'auto', display: 'flex', overflowY: 'auto',
-          flexDirection: 'column', gap: '5%', paddingX: '7%', filter: plansMenu ? 'blur(8px)' : '',
+        sx={{ width: '100%', height: '500px', display: 'flex', overflowY: 'auto',
+          flexDirection: 'column', gap: '5%', paddingX: {sm: '2%', md: '7%'}, filter: plansMenu ? 'blur(8px)' : '',
         }}
       >
         <Stack direction="row"

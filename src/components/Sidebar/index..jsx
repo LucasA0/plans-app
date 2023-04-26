@@ -3,6 +3,7 @@ import React, { useContext } from 'react'
 import { menuItems } from '../../utils/Menus/menuItems.'
 import { AuthContext } from '../../contexts/Auth/AuthContext'
 import { useNavigate } from 'react-router-dom';
+import { RiMenu3Fill } from 'react-icons/ri';
 
 function Sidebar({selectedOption, setSelectedOption}) {
   const auth = useContext(AuthContext);
@@ -14,7 +15,7 @@ function Sidebar({selectedOption, setSelectedOption}) {
   }
 
   return (
-      <Box sx={{ width: '17%', height: '100%',}}>
+      <Box sx={{ width: '17%', height: '100%', display: {xs: 'none', sm: 'none', md: 'block'}}}>
         <Stack
           sx={{ width: '100%', height: '60%', background: 'linear-gradient(180deg, #D5A595 0%, #F5E0D9 100%);',
             justifyContent: 'space-between', alignItems: 'center', borderBottomRightRadius: '10px',
