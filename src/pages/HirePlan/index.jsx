@@ -25,9 +25,9 @@ function HirePlan() {
 
   return (
     <Stack sx={{width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center'}}>
-      <Box sx={{width: '100%', height: '300px', backgroundImage: 'url(./assets/images/HirePlan-header-bg.png)', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
+      <Box sx={{width: '100%', height: '320px', backgroundImage: 'url(./assets/images/HirePlan-header-bg.png)', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
         <Stack sx={{width: '50%', height: '100%', justifyContent: 'space-between', padding: '5%'}}>
-          <Typography variant='h5' fontWeight="regular">Logo</Typography>
+          <img src="./assets/images/logo.svg" alt="Logo" style={{width: '200px'}}/>
           <Typography variant='h4'>
             Planos de Celular
           </Typography>
