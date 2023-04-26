@@ -19,7 +19,8 @@ function Header() {
         alignItems: 'center', backgroundImage: 'url("./assets/images/header-bg.png")', overflow: 'hiddem',
         backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
         <Stack sx={{width: {xs: '90%', sm: '90%', md: '80%'}, height: '100%', filter: searchPlans && 'blur(10px)'}}>
-          <Stack direction="row" sx={{width: '100%', height: {xs: '10%', sm: '10%',md: '10%'}, alignItems: 'center', justifyContent: 'space-between'}}>
+          <Stack direction="row" sx={{width: '100%', height: {xs: '10%', sm: '10%',md: '10%'},
+            alignItems: 'center', justifyContent: 'space-between'}}>
             <Box sx={{width: {sm: '50%', md: '40%'}, height: '100%', display: 'flex', alignItems: 'center'}}
             >
               <img src="./assets/images/logo.svg" alt="Logo" />

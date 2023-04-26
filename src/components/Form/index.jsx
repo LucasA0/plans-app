@@ -1,9 +1,10 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { TextField, Button, Typography, Box } from '@mui/material';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../contexts/Auth/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import AOS from 'aos'
 
 function Form() {
   const [showPassword, setShowPassword] = useState(false);
@@ -13,6 +14,10 @@ function Form() {
 
   const auth = useContext(AuthContext);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    AOS.init();
+  }, [])
 
   async function handleSignIn(e) {
     e.preventDefault();
@@ -43,23 +48,28 @@ function Form() {
           Por favor insira suas credenciais
         </Typography>
       <Box>
-        <TextField required label="Email" variant="outlined" value={email}
-          sx={{ width: '400px', height: '60px', }}
+        <TextField required label="Email" variant="outlined"
+          value={email}
+          sx={{ width: {xs: '340px', sm: '400px', md: '400px'}, height: '60px', }}
           helperText={errorMessage}
           error={errorMessage.length > 6}
           onChange={(e) => setEmail(e.target.value)}
+          data-aos="fade-left"
+          data-aos-duration="1000"
         />
       </Box>
       <Box style={{
-        position: 'relative',
+        position: 'relative', height: '20%'
       }}
       >
         <TextField required label="Senha" variant="outlined" type={showPassword ? 'text' : 'password'}
-          sx={{ width: '400px',height: '60px', }}
+          sx={{ width: {xs: '340px', sm: '400px', md: '400px'}, height: '60px', }}
           value={password}
           helperText={errorMessage}
           error={errorMessage.length > 6}
           onChange={(e) => setPassword(e.target.value)}
+          data-aos="fade-right"
+          data-aos-duration="1000"
         />
         <img src={showPassword ? './assets/icons/visible.png' : './assets/icons/visibility.png'}
           alt="icone de olho"
@@ -69,7 +79,7 @@ function Form() {
       </Box>
       <Button variant="contained" type="submit"
         sx={{
-          background: '#D40066', width: '400px', height: '60px',
+          background: '#D40066', width: {xs: '340px', sm: '400px', md: '400px'}, height: '60px',
           borderRadius: '4px', fontSize: '18px', fontWeight: '500',
           '&:hover': { background: '#D40066', },
         }}
@@ -77,7 +87,10 @@ function Form() {
       >
         Entrar
       </Button>
-      <Typography variant="span" sx={{ color: '#9F9F9F', cursor: 'pointer', }}>
+      <Typography variant="span" sx={{ color: '#9F9F9F', cursor: 'pointer', }}
+        data-aos="zoom-in"
+        data-aos-duration="1000"
+      >
         Esqueci minha senha
       </Typography>
     </form>
