@@ -28,9 +28,17 @@ function Header() {
               height: {xs: '35%', sm: '100%', md: '100%'}, display: {xs: 'none', sm: 'none', md: 'flex'},
               alignItems: 'center', justifyContent: 'space-between',}}
             >
-              <Typography variant="h7" fontWeight="bold">Como funciona</Typography>
-              <Typography variant="h7" fontWeight="bold">Benefícios</Typography>
-              <Typography variant="h7" fontWeight="bold">FAQ</Typography>
+              <a href="#steps" style={{textDecoration: 'none', color: '#000'}}>
+                <Typography variant="h7" fontWeight="bold">Como funciona</Typography>
+              </a>
+
+              <a href="#benefits" style={{textDecoration: 'none', color: '#000'}}>
+                <Typography variant="h7" fontWeight="bold">Benefícios</Typography>
+              </a>
+
+              <a href="#faq" style={{textDecoration: 'none', color: '#000'}}>
+                <Typography variant="h7" fontWeight="bold">FAQ</Typography>
+              </a>
             </Box>
             <Box sx={{width: {xs: '25%', sm: '25%', md: '0px'}, height: {xs: '100%', sm: '100%', md: '0px'},
             display: {xs: 'flex', sm: 'flex', md: 'none'}, alignItems: 'center', justifyContent: 'flex-end'}}

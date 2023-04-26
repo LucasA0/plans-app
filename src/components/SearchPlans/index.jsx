@@ -27,7 +27,7 @@ function SearchPlans() {
           </Typography>
         </Box>
         <Stack sx={{
-          width: '100%', height: '80%', justifyContent: 'center', gap: {xs: '10%' ,sm: '10%', md: '5%'}
+          width: '100%', height: '80%', justifyContent: 'center', gap: {xs: '10%' ,sm: '10%', md: '8%'}
         }}>
           <Typography variant='h5' fontWeight="medium">
             Qual cidade que você mora?
