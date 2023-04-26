@@ -23,7 +23,7 @@ function Benefits() {
               key={benefit.id}
               sx={{width: {xs:'100%', sm: '100%', md: '49%'}, height: {xs: '23%', sm: '35%', md: '35%'},
                 display: 'flex', alignItems: 'center', gap: '2%', justifyContent: 'space-evenly'}}
-              data-aos="zoom-out"
+              data-aos="zoom-in"
               data-aos-duration="1000"
             >
               <Box sx={{width: '12%', height: '100%', display: {xs: 'none', sm: 'flex', md: 'flex'}}}>

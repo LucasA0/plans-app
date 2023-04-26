@@ -21,7 +21,7 @@ function Steps() {
             '&:nth-of-type(2)': {alignSelf: {xs: 'center', sm: 'center', md: 'center'}},
             '&:nth-of-type(3)': {alignSelf: {xs: 'center', sm: 'flex-end', md: 'center'}}}}
             key={step.id}
-            data-aos="zoom-out"
+            data-aos="zoom-in"
             data-aos-duration="1000"
           >
             <Box sx={{width: '35px', height: '35px', background: '#D40066',
