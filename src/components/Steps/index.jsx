@@ -1,19 +1,28 @@
 import { Box, Stack, Typography } from "@mui/material"
 import { stepsLoop } from "../../utils/steps/steps"
+import AOS from 'aos'
+import { useEffect } from "react"
 
 function Steps() {
+
+  useEffect(() => {
+    AOS.init();
+  }, [])
+
   return (
     <Box sx={{width: '100%', height: '90%', zIndex: '99999', display: 'flex', justifyContent: 'center',
       flexDirection: 'column', gap: '5%'}}>
       <Typography variant='h5' fontWeight="semiBold">Seu plano em apenas 3 passos</Typography>
-      <Stack sx={{width: '100%', height: '70%', alignItems: 'center', justifyContent: 'space-between', flexDirection: {sm: 'column', md: 'row'}}}>
+      <Stack sx={{width: '100%', height: '80%', alignItems: 'center', justifyContent: 'space-evenly', flexDirection: {sm: 'column', md: 'row'}}}>
         {stepsLoop.map(step => (
-          <Stack direction="row" sx={{width: {xs: '100%', sm: '70%', md: '32%'}, height: {xs: '30%', sm: '25%',md: '70%'}, border: '2px solid #D40066',
+          <Stack direction="row" sx={{width: {xs: '90%', sm: '70%', md: '30%'}, height: {xs: '25%', sm: '25%',md: '70%'}, border: '2px solid #D40066',
             borderRadius: '10px', position: 'relative', justifyContent: 'center', alignItems: 'center', background: '#fff',
             boxShadow: '5px 5px 10px #Aaa', '&:nth-of-type(1)': {alignSelf: {xs: 'center', sm: 'flex-start', md: 'center'}},
             '&:nth-of-type(2)': {alignSelf: {xs: 'center', sm: 'center', md: 'center'}},
             '&:nth-of-type(3)': {alignSelf: {xs: 'center', sm: 'flex-end', md: 'center'}}}}
             key={step.id}
+            data-aos="zoom-out"
+            data-aos-duration="1000"
           >
             <Box sx={{width: '35px', height: '35px', background: '#D40066',
               left: '-2px', position: 'absolute', top: '-2px', display: 'flex',

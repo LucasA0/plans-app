@@ -4,7 +4,7 @@ function Footer() {
   return (
     <Box sx={{width: '100%', height: {xs: '700px', sm: '400px', md: '400px'}, background: '#E9EBFF', display: 'flex', alignItems: 'center',
       justifyContent: 'center', paddingTop: {xs: '0px', sm: '10%', md: '0px'}}}>
-      <Stack sx={{width: '80%', height: '100%'}}>
+      <Stack sx={{width: {xs: '90%', sm: '90%', md: '80%'}, height: '100%'}}>
         <Stack sx={{height: '85%', paddingTop: {xs: '15%', sm: '2%', md: '2%'}, justifyContent: 'space-between', flexDirection: {xs: 'column', sm: 'row', md: 'row'}}}>
           <Stack sx={{width: {xs: '100%', sm: '30%', md: '30%'}, height: {xs: '35%', sm: '100%', md: '100%'}, gap: '10%'}}>
             <img src="./assets/images/logo.svg" alt="Logo" style={{width: '200px', height: '80px'}} />
@@ -25,7 +25,7 @@ function Footer() {
           </Stack>
         </Stack>
         <Stack sx={{height: '20%', borderTop: '2px solid lightGray', alignItems: 'center', justifyContent: 'space-between',
-          flexDirection: {xs: 'column', sm: 'row', md: 'row'}, paddingY: '5%'}}>
+          flexDirection: {xs: 'column', sm: 'row', md: 'row'}, paddingY: '1%'}}>
           <Typography variant='h7'>Logo da Equipe</Typography>
           <Typography variant='h7'>© Copyright - 2023 - nome da empresa</Typography>
           <Typography variant='h7'>Logo Agência</Typography>
