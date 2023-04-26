@@ -16,8 +16,8 @@ function About() {
   }
 
   return (
-    <Box sx={{width: '80%', height: '100%', display: 'flex', justifyContent: 'center', flexDirection: 'column'}}>
-          <Stack sx={{gap: '12%', height: {xs: '25%', sm: '13%', md: '13%'}}}>
+    <Box sx={{ width: {xs: '90%', sm: '80%', md: '80%'}, height: '100%', display: 'flex', justifyContent: 'center', flexDirection: 'column'}}>
+          <Stack sx={{gap: '12%', height: {xs: '20%', sm: '13%', md: '13%'}}}>
             <Typography variant='h5' fontWeight="semiBold">Um pouco mais sobre (Nome da empresa)</Typography>
             <Typography variant='h7'>Somos um comparador de ofertas de serviços financeiros e de telecom. Utilizando nossa ferramenta, você encontra planos de celular.</Typography>
           </Stack>
@@ -37,9 +37,9 @@ function About() {
                     }
                   </Box>
                 </Box>
-                <Stack direction="row" sx={{width: '100%', height: '60%', alignItems: 'center', paddingLeft: '2%', display: aboutId === item.id ? 'flex' : 'none'}}>
-                  <Box sx={{width: '100%', height: '100%', borderLeft: '2px solid #D40066', paddingLeft: '2%', display: 'flex', alignItems: 'center', marginBottom: '20px'}}>
-                    <Typography>{item.description}</Typography>
+                <Stack direction="row" sx={{width: '100%', height: {xs: '70%', sm: '60%', md: '60%'}, alignItems: 'center', paddingLeft: '2%', display: aboutId === item.id ? 'flex' : 'none'}}>
+                  <Box sx={{width: '100%', height: '100%', borderLeft: '2px solid #D40066', paddingLeft: {xs: '5%', sm: '3%', md: '2%'}, display: 'flex', alignItems: 'center', marginBottom: '20px'}}>
+                    <Typography variant='subtitle2'>{item.description}</Typography>
                   </Box>
                 </Stack>
               </Stack>

@@ -4,7 +4,7 @@ import { Menu, SearchPlans } from ".."
 import { PlansContext } from "../../contexts/Plans/PlansContext"
 
 function Header() {
-  const [isMobile, setIsMobile] = useState(false)
+  const [isMobile, setIsMobile] = useState(true)
   const [menu, setMenu] = useState(false)
 
   const {searchPlans, setSearchPlans} = useContext(PlansContext)
@@ -23,7 +23,7 @@ function Header() {
     <Stack sx={{width: '100%', height: {xs: '1150px', sm: '1150px',md: '880px'}, justifyContent: 'center',
         alignItems: 'center', backgroundImage: 'url("./assets/images/header-bg.png")',
         backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
-        <Stack sx={{width: {xs: '90%', sm: '90%', md: '80%'}, height: '100%', filter: searchPlans && 'blur(10px)'}}>
+        <Stack sx={{width: {xs: '90%', sm: '80%', md: '80%'}, height: '100%', filter: searchPlans && 'blur(10px)'}}>
           <Stack direction="row" sx={{width: '100%', height: {xs: '10%', sm: '10%',md: '10%'}, alignItems: 'center', justifyContent: 'space-between'}}>
             <Box sx={{width: {sm: '50%', md: '40%'}, height: '100%', display: 'flex', alignItems: 'center'}}>
               <Typography variant='h7' fontWeight="bold" >Logo</Typography>
