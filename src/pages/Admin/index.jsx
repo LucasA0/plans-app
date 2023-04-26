@@ -19,9 +19,7 @@ function Admin() {
         }}
       >
         <Box sx={{height: '5%'}}>
-          <Typography variant="h5">
-            Logo
-          </Typography>
+          <img src="./assets/images/logo.svg" alt="Logo" />
         </Box>
         <Form />
       </Stack>

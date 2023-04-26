@@ -7,7 +7,7 @@ function Footer() {
       <Stack sx={{width: '80%', height: '100%'}}>
         <Stack sx={{height: '85%', paddingTop: {xs: '15%', sm: '2%', md: '2%'}, justifyContent: 'space-between', flexDirection: {xs: 'column', sm: 'row', md: 'row'}}}>
           <Stack sx={{width: {xs: '100%', sm: '30%', md: '30%'}, height: {xs: '35%', sm: '100%', md: '100%'}, gap: '10%'}}>
-            <Typography variant='h4'>Logo</Typography>
+            <img src="./assets/images/logo.svg" alt="Logo" style={{width: '200px', height: '80px'}} />
             <Typography variant='h7'>Encontrado o plano perfeito com facilidade e praticidade</Typography>
           </Stack>
           <Stack sx={{width: {xs: '100%', sm: '30%', md: '30%'}, height: {xs: '35%', sm: '100%', md: '100%'}, gap: '8%',

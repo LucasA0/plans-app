@@ -21,3 +21,4 @@ export {default as Footer} from './Footer';
 export {default as HirePlanForm} from './HirePlanForm';
 export {default as ClientRegister} from './ClientRegister';
 export {default as States} from './States';
+export {default as Steps} from './Steps';

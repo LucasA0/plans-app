@@ -26,9 +26,7 @@ function Sidebar({selectedOption, setSelectedOption}) {
             borderBottomStyle: 'solid', borderBottomColor: '#D5A595', display: 'flex',
             alignItems: 'center', justifyContent: 'center'
           }}>
-            <Typography variant='h5'>
-              Logo
-            </Typography>
+            <img src="./assets/images/logo.svg" alt="Logo" />
           </Box>
           <Stack
             sx={{
