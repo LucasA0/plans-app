@@ -57,6 +57,20 @@
   align-items: center;
 }
 
+#test {
+  animation: slide-left 0.5s ease-in-out;
+  transition: 0.5s;
+}
+
+@keyframes slide-left {
+  from {
+    transform: translateX(350px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
 @media screen and (max-width: 900px) {
   .container {
     flex-flow: column-reverse;
