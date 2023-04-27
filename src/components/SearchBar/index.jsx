@@ -1,4 +1,4 @@
-import {OutlinedInput, InputAdornment, Button, FormControl} from '@mui/material'
+import {OutlinedInput, InputAdornment, FormControl} from '@mui/material'
 import { useContext } from 'react'
 import { PlansContext } from '../../contexts/Plans/PlansContext'
 
@@ -8,7 +8,7 @@ function SearchBar() {
 
   return (
     <>
-      <FormControl variant="outlined" sx={{width: '50%'}}>
+      <FormControl variant="outlined" sx={{width: {xs: '45%', sm:'50%', md: '50%'}}}>
         <OutlinedInput id="input-with-icon-adornment" onChange={(e) => setSearch(e.target.value)} placeholder="Pesquisar" sx={{borderRadius: '20px'}}
           startAdornment={
             <InputAdornment position="start"
@@ -19,9 +19,6 @@ function SearchBar() {
           }
         />
         </FormControl>
-      <Button variant="outlined" sx={{borderColor: '#000', color: '#000', border: '2px solid'}}>
-        Admin
-      </Button>
     </>
   )
 }

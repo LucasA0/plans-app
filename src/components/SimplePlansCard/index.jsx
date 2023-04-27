@@ -24,58 +24,64 @@ function SimplePlansCard() {
           <Box
             key={plano.title}
             sx={{
-              width: '100%', height: '100px', borderBottom: '1px solid lightGray',
+              width: '100%', height: {xs: '319px', sm: '100px', md: '100px'}, borderBottom: '1px solid lightGray',
               display: 'flex', alignItems: 'center', justifyContent: 'space-between',
             }}
           >
             <Box
               sx={{ display: 'flex', width: '50%', height: '100%',
-                alignItems: 'center', justifyContent: 'start', gap: '5%'
+              alignItems: {xs: 'start', sm: 'center', md: 'center'}, justifyContent: {xs: 'center', sm: 'start', md: 'start'}, gap: {xs: '10%', sm: '5%', md: '5%'}, flexDirection: {xs: 'column', sm: 'row', md: 'row'}
               }}
             >
               <img src={`https://planos-backend.onrender.com/assets/${plano.providerLogo}`} alt={plano.provider}/>
-              <Typography variant="h6">
+              <Typography variant="subtitle1" fontWeight="bold">
                 {plano.title}
               </Typography>
             </Box>
             <Box
               sx={{
                 width: '48%', height: '100%',
-                alignItems: 'center', justifyContent: 'center', display: 'flex'
+                alignItems: 'center', justifyContent: 'space-evenly', display: 'flex',
+                flexDirection: {xs: 'column', sm: 'row', md: 'row'}
               }}
             >
               <Stack
+                direction={{xs: 'row-reverse', sm: 'column', md: 'column'}}
                 sx={{
-                  width: '25%', height: '100%',
-                  alignItems: 'start', justifyContent: 'center'
+                  width: {xs: '100%', sm: '25%', md: '25%'}, height: '100%',
+                  alignItems: 'start', justifyContent: {xs: 'space-evenly', sm: 'center', md: 'center'}
                 }}
               >
-                <Typography sx={{fontWeight: '500'}}>
+                <Typography variant="body1" sx={{fontWeight: '500'}}>
                   {plano.contacts}
                 </Typography>
-                <Typography sx={{color: 'lightGray'}}>
+                <Typography variant="body2" sx={{color: 'lightGray'}}>
                   Contatos
                 </Typography>
               </Stack>
-              <Stack sx={{ width: '25%', height: '100%',
-                alignItems: 'start', justifyContent: 'center'
-                }}
+              <Stack
+                direction={{xs: 'row-reverse', sm: 'column', md: 'column'}}
+                sx={{ width: {xs: '100%', sm: '25%', md: '25%'}, height: '100%',
+                  alignItems: 'start', justifyContent: {xs: 'space-evenly', sm: 'center', md: 'center'}
+                  }}
               >
-                <Typography sx={{fontWeight: '500'}}>
+                <Typography variant="body1" sx={{fontWeight: '500'}}>
                   R$ {plano.cost.toFixed(2)}
                 </Typography>
-                <Typography sx={{color: 'lightGray'}}>
+                <Typography variant="body2" sx={{color: 'lightGray'}}>
                   Total
                 </Typography>
               </Stack>
-              <Stack sx={{ width: '25%', height: '100%',
-                alignItems: 'start', justifyContent: 'center'
+              <Stack
+                direction={{xs: 'row-reverse', sm: 'column', md: 'column'}}
+                sx={{ width: {xs: '100%', sm: '25%', md: '25%'}, height: '100%',
+                alignItems: 'start', justifyContent: {xs: 'space-evenly', sm: 'center', md: 'center'}
                 }}
               >
-                <Typography sx={{fontWeight: '500'}}>
+                <Typography variant="body1" sx={{fontWeight: '500'}}>
                   {plano.createdAt.slice(0, 10).split('-').reverse().join('/')}
                 </Typography>
-                <Typography sx={{color: 'lightGray'}}>
+                <Typography variant="body2" sx={{color: 'lightGray'}}>
                   Criado em
                 </Typography>
               </Stack>
@@ -86,65 +92,71 @@ function SimplePlansCard() {
         <Box
           key={plano.title}
           sx={{
-            width: '100%', height: '100px', borderBottom: '1px solid lightGray',
+            width: '100%', height: {xs: '250px', sm: '100px', md: '100px'}, borderBottom: '1px solid lightGray',
             display: 'flex', alignItems: 'center', justifyContent: 'space-between',
           }}
         >
           <Box
             sx={{ display: 'flex', width: '50%', height: '100%',
-              alignItems: 'center', justifyContent: 'start', gap: '5%'
+              alignItems: {xs: 'start', sm: 'center', md: 'center'}, justifyContent: {xs: 'center', sm: 'start', md: 'start'}, gap: {xs: '10%', sm: '5%', md: '5%'}, flexDirection: {xs: 'column', sm: 'row', md: 'row'}
             }}
           >
             <img src={`https://planos-backend.onrender.com/assets/${plano.providerLogo}`} alt={plano.provider}/>
-            <Typography variant="h6">
+            <Typography variant="subtitle1" fontWeight="bold">
               {plano.title}
             </Typography>
           </Box>
           <Box
             sx={{
               width: '48%', height: '100%',
-              alignItems: 'center', justifyContent: 'center', display: 'flex'
+              alignItems: 'center', justifyContent: 'space-evenly', display: 'flex',
+              flexDirection: {xs: 'column', sm: 'row', md: 'row'}
             }}
           >
             <Stack
+              direction={{xs: 'row-reverse', sm: 'column', md: 'column'}}
               sx={{
-                width: '25%', height: '100%',
-                alignItems: 'start', justifyContent: 'center'
+                width: {xs: '100%', sm: '25%', md: '25%'}, height: '100%',
+                alignItems: 'start', justifyContent: {xs: 'space-evenly', sm: 'center', md: 'center'}
               }}
             >
-              <Typography sx={{fontWeight: '500'}}>
+              <Typography variant="body1" sx={{fontWeight: '500'}}>
                 {plano.contacts}
               </Typography>
-              <Typography sx={{color: 'lightGray'}}>
+              <Typography variant="body2" sx={{color: 'lightGray'}}>
                 Contatos
               </Typography>
             </Stack>
-            <Stack sx={{ width: '25%', height: '100%',
-              alignItems: 'start', justifyContent: 'center'
+            <Stack
+              direction={{xs: 'row-reverse', sm: 'column', md: 'column'}}
+            sx={{ width: {xs: '100%', sm: '25%', md: '25%'}, height: '100%',
+              alignItems: 'start', justifyContent: {xs: 'space-evenly', sm: 'center', md: 'center'}
               }}
             >
-              <Typography sx={{fontWeight: '500'}}>
+              <Typography variant="body1" sx={{fontWeight: '500'}}>
                 R$ {plano.cost.toFixed(2)}
               </Typography>
-              <Typography sx={{color: 'lightGray'}}>
+              <Typography variant="body2" sx={{color: 'lightGray'}}>
                 Total
               </Typography>
             </Stack>
-            <Stack sx={{ width: '25%', height: '100%',
-              alignItems: 'start', justifyContent: 'center'
+            <Stack
+              direction={{xs: 'row-reverse', sm: 'column', md: 'column'}}
+              sx={{ width: {xs: '100%', sm: '25%', md: '25%'}, height: '100%',
+              alignItems: 'start', justifyContent: {xs: 'space-evenly', sm: 'center', md: 'center'}
               }}
             >
-              <Typography sx={{fontWeight: '500'}}>
+              <Typography variant="body1" sx={{fontWeight: '500'}}>
                 {plano.createdAt.slice(0, 10).split('-').reverse().join('/')}
               </Typography>
-              <Typography sx={{color: 'lightGray'}}>
+              <Typography variant="body2" sx={{color: 'lightGray'}}>
                 Criado em
               </Typography>
             </Stack>
           </Box>
         </Box>
       )))}
-      <Box sx={{width: '100%', height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1%'}}>
+      {search.length > 0 ? <Box></Box> : (<Box sx={{width: '100%', height: {xs: '100px', sm: '50px', md: '50px'}, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1%'}}>
         {Array.from(Array(pages), (item, index) => {
           return <button value={index}
             key={index}
@@ -155,7 +167,7 @@ function SimplePlansCard() {
             }}
           >{index + 1}</button>
         })}
-      </Box>
+      </Box>)}
     </>
   )
 }
