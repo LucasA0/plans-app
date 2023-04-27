@@ -33,8 +33,8 @@ function Clientes() {
   return (
     <>
       <Box
-        sx={{ width: '100%', height: '700px', display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly',
-        alignItems: 'center', paddingX: {md: '1%'}}}
+        sx={{ width: '100%', height: {xs: '900px', sm: '700px', md: '700px'}, display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly',
+        alignItems: 'center', paddingX: {xs: '0%', sm: '1%', md: '1%'}}}
       >
         <Stack direction="row"
           sx={{
@@ -74,7 +74,7 @@ function Clientes() {
             filterMenu && <SmallFilterMenu filterMenu={filterMenu} setFilterMenu={setFilterMenu} />
           }
         </Stack>
-        <Box sx={{width: '100%', height: '500px'}}>
+        <Box sx={{width: '100%', height: {xs: '650px',sm: '500px', md: '500px'}}}>
           {loading === true ? <Loading /> : <ClientsCard clients={clients}/>}
         </Box>
       </Box>

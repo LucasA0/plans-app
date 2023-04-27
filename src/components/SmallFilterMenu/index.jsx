@@ -16,14 +16,14 @@ function SmallFilterMenu({filterMenu, setFilterMenu}) {
         alignItems: 'center', justifyContent: 'space-evenly' }}>
         {checkboxGroup.map((check) => (
           <label
-            style={{ display: 'flex', alignItems: 'center', width: '80%', height: '5%', justifyContent: 'space-evenly',
-              cursor: 'pointer'
+            style={{ display: 'flex', alignItems: 'center', width: '80%', height: '15%', justifyContent: 'flex-start',
+              cursor: 'pointer', borderBottom: '1px solid #D5A595', gap: '8%'
           }}
             key={check.id}
           >
-            <input
-              type="checkbox" name={check.name} id={check.name} value={check.value}
-            />
+          <input
+            type="checkbox" name={check.name} id={check.name} value={check.value}
+          />
             {check.name}
           </label>
         ))}

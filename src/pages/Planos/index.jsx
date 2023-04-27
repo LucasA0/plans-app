@@ -5,10 +5,12 @@ import { useContext, useState } from "react";
 import { PlansContext } from "../../contexts/Plans/PlansContext";
 import Loading from "../../components/Loading";
 import { RiMenu3Fill } from "react-icons/ri";
+import SmallFilterMenu from "../../components/SmallFilterMenu";
 
 function Planos() {
   const [hide, setHide] = useState(false);
   const {allPlans, loading} = useContext(PlansContext);
+  const [filterMenu, setFilterMenu] = useState(false)
 
   return (
     <>
@@ -48,8 +50,11 @@ function Planos() {
           <Box sx={{width: {xs: '25%', sm: '0px', md: '0px'}, height: {xs: '100%', sm: '100%', md: '0px'},
             display: {xs: 'flex', sm: 'none', md: 'none'}, alignItems: 'center', justifyContent: 'flex-end'}}
             >
-            <RiMenu3Fill style={{width: '50px', height: '35px', cursor: 'pointer'}} onClick={() => {}}/>
+            <RiMenu3Fill style={{width: '50px', height: '35px', cursor: 'pointer'}} onClick={() => setFilterMenu(!filterMenu)}/>
           </Box>
+          {
+            filterMenu && <SmallFilterMenu filterMenu={filterMenu} setFilterMenu={setFilterMenu} />
+          }
         </Stack>
         {loading === true ? <Loading /> : <Box sx={{width: '100%', height: '500px', overflowY: 'auto'}}>
           <CompletePlansCard />

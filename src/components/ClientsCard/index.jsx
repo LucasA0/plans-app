@@ -36,7 +36,7 @@ function ClientsCard({clients}) {
     <>
       {search.length > 0 ? filteredClients?.map(client => (
         <Stack sx={{
-          width: '100%', height: '150px', borderBottom: '1px solid lightGray',
+          width: '100%', height: {xs: '250px', sm: '150px', md: '150px'}, borderBottom: '1px solid lightGray',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           overflowY: 'auto', gap: '5%'
         }}
@@ -85,29 +85,34 @@ function ClientsCard({clients}) {
       )) : (
         currentItems.map((client) => (
           <Stack sx={{
-            width: '100%', height: '150px', borderBottom: '1px solid lightGray',
+            width: '100%', height: {xs: '200px', sm: '150px', md: '150px'}, borderBottom: '1px solid lightGray',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             overflowY: 'auto', gap: '5%'
           }}
           key={client.name}
           >
-            <Box sx={{display: 'flex', width: '100%', height: '40%'}}>
-              <Stack sx={{flexDirection: 'row', width: '30%', height: '100%', alignItems: 'center', justifyContent: 'start', gap: '10%'}}>
+            <Box sx={{display: 'flex', width: '100%', height: {xs: '90%', sm: '40%', md: '40%'}}}>
+              <Stack sx={{flexDirection: {xs: 'column', sm: 'row', md: 'row'}, width: '30%', height: '100%', alignItems: 'center', justifyContent: 'start', gap: '10%'}}>
                 <Stack sx={{width: '90%', height: '100%', gap: '5%', justifyContent: 'center'}}>
                   <Typography variant='body1' fontWeight='medium'>{client.name}</Typography>
                   <Typography variant='subtitle2' color="lightgray">Nome</Typography>
                 </Stack>
               </Stack>
-              <Stack sx={{flexDirection: 'row', width: '80%', height: '100%', alignItems: 'center', justifyContent: 'start', gap: '2%'}}>
-                <Stack sx={{width: '40%', height: '100%', gap: '5%', justifyContent: 'center'}}>
-                  <Typography variant='body1' fontWeight='medium'>{client.cel}</Typography>
-                  <Typography variant='subtitle2' color="lightgray">Celular</Typography>
+              <Stack sx={{flexDirection: {xs: 'row', sm: 'row', md: 'row'}, width: '80%', height: '100%', alignItems: 'center', justifyContent: 'start', gap: '2%'}}>
+                <Stack
+                  direction={{xs: 'column', sm: 'row', md: 'row'}}
+                  sx={{width: {xs: '50%', sm: '55%', md: '55%'}, height: '100%', alignItems: 'center', justifyContent: 'center'}}
+                >
+                  <Stack sx={{width: {xs: '100%', sm: '50%', md: '40%'}, height: '40%', justifyContent: 'center', alignItems: 'center'}}>
+                    <Typography variant='body1' fontWeight='medium'>{client.cel}</Typography>
+                    <Typography variant='subtitle2' color="lightgray">Celular</Typography>
+                  </Stack>
+                  <Stack sx={{width: {xs: '100%', sm: '50%', md: '40%'}, height: '40%', justifyContent: 'center', alignItems: 'center'}}>
+                    <Typography variant='body1' fontWeight='medium'>{insertMaskInCpf(client.cpf)}</Typography>
+                    <Typography variant='subtitle2' color="lightgray">Cpf</Typography>
+                  </Stack>
                 </Stack>
-                <Stack sx={{width: '40%', height: '100%', gap: '5%', justifyContent: 'center'}}>
-                  <Typography variant='body1' fontWeight='medium'>{insertMaskInCpf(client.cpf)}</Typography>
-                  <Typography variant='subtitle2' color="lightgray">Cpf</Typography>
-                </Stack>
-                <Stack sx={{width: '45%', height: '100%', gap: '5%', justifyContent: 'center'}}>
+                <Stack sx={{width: {xs: '30%', sm: '30%', md: '45%'}, height: '100%', gap: '5%', justifyContent: 'center'}}>
                   <Typography variant='body1' fontWeight='medium'>{client.dateOfBirth}</Typography>
                   <Typography variant='subtitle2' color="lightgray">Data de nascimento</Typography>
                 </Stack>
@@ -121,11 +126,11 @@ function ClientsCard({clients}) {
               </Stack>
             </Box>
             <Box sx={{display: clientId === client._id ? 'flex' : 'none', width: '100%', height: '40%'}}>
-              <Stack sx={{width: '40%', height: '100%', gap: '5%', justifyContent: 'center', alignItems: 'center'}}>
+              <Stack sx={{width: {xs: '50%', sm: '40%', md: '40%'}, height: '100%', gap: '5%', justifyContent: 'center', alignItems: 'center'}}>
                 <Typography variant='body1' fontWeight='medium'>{planData[0]?.title}</Typography>
                 <Typography variant='subtitle2' color="lightgray">Plano</Typography>
               </Stack>
-              <Stack sx={{width: '40%', height: '100%', gap: '5%', justifyContent: 'center', alignItems: 'center'}}>
+              <Stack sx={{width: {xs: '50%', sm: '40%', md: '40%'}, height: '100%', gap: '5%', justifyContent: 'center', alignItems: 'center'}}>
                 <Typography variant='body1' fontWeight='medium'>{client.dateOfBirth}</Typography>
                 <Typography variant='subtitle2' color="lightgray">Data de Contato</Typography>
               </Stack>

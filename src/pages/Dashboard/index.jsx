@@ -14,8 +14,8 @@ function Dashboard() {
   return (
     <Box sx={{ width: '100%', height: '100vh', display: 'flex', gap: '5%'}}>
       <Sidebar selectedOption={selectedOption} setSelectedOption={setSelectedOption} />
-      <Stack sx={{ width: {xs: '90%', sm: '90%', md:'73%'}, height: '100vh', margin: {xs: '0 auto', sm: '0 auto', md: '0px'}}}>
-        <Box sx={{ width: '100%', height: '10%', padding: '1%'}}>
+      <Stack sx={{ width: {xs: '98%', sm: '90%', md:'73%'}, height: '100vh', margin: {xs: '0 auto', sm: '0 auto', md: '0px'}}}>
+        <Box sx={{ width: '100%', height: '10%', padding: {xs: '0%', sm: '1%', md: '1%'}}}>
           <Stack direction="row" sx={{ width: '100%', height: '100%',
             justifyContent: 'space-between', alignItems: 'center', position: 'relative'
           }}
