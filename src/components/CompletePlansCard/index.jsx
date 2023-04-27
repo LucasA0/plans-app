@@ -35,29 +35,29 @@ function CompletePlansCard() {
           >
             {plano.providerLogo ? (<img src={`https://planos-backend.onrender.com/assets/${plano.providerLogo}`} style={{maxWidth: '100px', maxHeight: '100px'}} alt={plano.provider}/>):
             (<img src='./assets/icons/nao-ha-fotos.png' style={{maxWidth: '100px', maxHeight: '100px'}}/>)}
-            <Typography variant="h7" fontWeight="medium">
+            <Typography variant="subtitle1" fontWeight="bold">
               {plano.title}
             </Typography>
           </Box>
             <Box sx={{width: '80%', height: '70%', display: 'flex', alignItems: 'center',
               justifyContent: 'space-evenly', flexWrap: 'wrap'}}>
               <Stack>
-                <Typography variant="h7" fontWeight="medium">R$ {plano.cost.toFixed(2)}</Typography>
-                <Typography variant='span' sx={{color: 'lightGray'}}>Valor</Typography>
+                <Typography variant="body1">R$ {plano.cost.toFixed(2)}</Typography>
+                <Typography variant='body2' sx={{color: 'lightGray'}}>Valor</Typography>
               </Stack>
               <Stack>
-                <Typography variant="h7" fontWeight="medium">{plano.franchise}GB</Typography>
-                <Typography variant='span' sx={{color: 'lightGray'}}>Franquia</Typography>
+                <Typography variant="body1">{plano.franchise}GB</Typography>
+                <Typography variant='body2' sx={{color: 'lightGray'}}>Franquia</Typography>
               </Stack>
               <Stack>
-                <Typography variant="h7" fontWeight="medium">{plano.contacts}</Typography>
-                <Typography variant='span' sx={{color: 'lightGray'}}>Contatos</Typography>
+                <Typography variant="body1">{plano.contacts}</Typography>
+                <Typography variant='body2' sx={{color: 'lightGray'}}>Contatos</Typography>
               </Stack>
               <Stack>
-                <Typography variant="h7" fontWeight="medium">{plano.createdAt.slice(0, 10).split('-').reverse().join('/')}</Typography>
-                <Typography variant='span' sx={{color: 'lightGray'}}>Criado em</Typography>
+                <Typography variant="body1">{plano.createdAt.slice(0, 10).split('-').reverse().join('/')}</Typography>
+                <Typography variant='body2' sx={{color: 'lightGray'}}>Criado em</Typography>
               </Stack>
-              <Stack sx={{width: '75%', height: '45%', alignItems: 'center', justifyContent: 'center',
+              <Stack sx={{width: {sm:'90%', md: '75%'}, height: '45%', alignItems: 'center', justifyContent: 'center',
                 gap: '5%', flexDirection: 'row'}}>
                 <button style={{width: '80px', height: '40px', borderRadius: '10px',
                   border: 'none', background: '#D40066', color: '#fff', fontWeight: 'medium', cursor: 'pointer'}}
@@ -92,29 +92,29 @@ function CompletePlansCard() {
             }}
           >
             <img src={`https://planos-backend.onrender.com/assets/${plano.providerLogo}`} alt={plano.provider}/>
-            <Typography variant="h7" fontWeight="medium">
+            <Typography variant="subtitle1" fontWeight="bold">
               {plano.title}
             </Typography>
           </Box>
             <Box sx={{width: '80%', height: '70%', display: 'flex', alignItems: 'center',
               justifyContent: 'space-evenly', flexWrap: 'wrap'}}>
               <Stack>
-                <Typography variant="h7" fontWeight="medium">R$ {plano.cost.toFixed(2)}</Typography>
-                <Typography variant='span' sx={{color: 'lightGray'}}>Valor</Typography>
+                <Typography variant="body1">R$ {plano.cost.toFixed(2)}</Typography>
+                <Typography variant='body2' sx={{color: 'lightGray'}}>Valor</Typography>
               </Stack>
               <Stack>
-                <Typography variant="h7" fontWeight="medium">{plano.franchise}GB</Typography>
-                <Typography variant='span' sx={{color: 'lightGray'}}>Franquia</Typography>
+                <Typography variant="body1">{plano.franchise}GB</Typography>
+                <Typography variant='body2' sx={{color: 'lightGray'}}>Franquia</Typography>
               </Stack>
               <Stack>
-                <Typography variant="h7" fontWeight="medium">{plano.contacts}</Typography>
-                <Typography variant='span' sx={{color: 'lightGray'}}>Contatos</Typography>
+                <Typography variant="body1">{plano.contacts}</Typography>
+                <Typography variant='body2' sx={{color: 'lightGray'}}>Contatos</Typography>
               </Stack>
               <Stack>
-                <Typography variant="h7" fontWeight="medium">{plano.createdAt.slice(0, 10).split('-').reverse().join('/')}</Typography>
-                <Typography variant='span' sx={{color: 'lightGray'}}>Criado em</Typography>
+                <Typography variant="body1">{plano.createdAt.slice(0, 10).split('-').reverse().join('/')}</Typography>
+                <Typography variant='body2' sx={{color: 'lightGray'}}>Criado em</Typography>
               </Stack>
-              <Stack sx={{width: '75%', height: '45%', alignItems: 'center', justifyContent: 'center',
+              <Stack sx={{width: {sm:'90%', md: '75%'}, height: '45%', alignItems: 'center', justifyContent: 'center',
                 gap: '5%', flexDirection: 'row'}}>
                 <button style={{width: '80px', height: '40px', borderRadius: '10px',
                   border: 'none', background: '#D40066', color: '#fff', fontWeight: 'medium', cursor: 'pointer'}}
@@ -135,7 +135,7 @@ function CompletePlansCard() {
             </Box>
         </Box>
       )))}
-      <Box sx={{width: '100%', height: '50px', display: isEditing ? 'none' : 'flex', alignItems: 'center', justifyContent: 'center', gap: '1%'}}>
+      {search.length > 0 ? <Box></Box> : (<Box sx={{width: '100%', height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1%'}}>
         {Array.from(Array(pages), (item, index) => {
           return <button value={index}
             key={index}
@@ -146,7 +146,7 @@ function CompletePlansCard() {
             }}
           >{index + 1}</button>
         })}
-      </Box>
+      </Box>)}
       {
         editMenu && <AddNewPlan menuTitle={'Editar Plano'} />
       }

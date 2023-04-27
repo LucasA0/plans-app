@@ -1,12 +1,23 @@
 import { Stack, Box, Typography } from "@mui/material"
 import { AiOutlineClose } from "react-icons/ai"
 import { menuItems } from "../../utils/Menus/menuItems."
+import { useContext } from "react"
+import { AuthContext } from "../../contexts/Auth/AuthContext"
+import { useNavigate } from "react-router-dom"
 
 function AdminMenu({adminMenu, setAdminMenu, selectedOption, setSelectedOption}) {
+
+  const navigate = useNavigate();
+  const auth = useContext(AuthContext)
 
   const handleAdminMenu = (item) => {
     setSelectedOption(item.name)
     setAdminMenu(!adminMenu)
+  }
+
+  function handleSignOut() {
+    auth.signOut();
+    navigate('/')
   }
 
   return (
@@ -19,7 +30,7 @@ function AdminMenu({adminMenu, setAdminMenu, selectedOption, setSelectedOption})
         background: 'transparent', border: 'none', outline: 'none', cursor: 'pointer'}}
       ><AiOutlineClose color="#D40066" fontSize="30px" onClick={() => setAdminMenu(!adminMenu)}/></button>
       <Stack sx={{width: '70%', height: '100%', alignItems: 'center', justifyContent: 'center', gap: '10%'}}>
-        <Stack sx={{width: '100%', height: '10%', alignItems: 'center', justifyContent: 'center', borderBottom: '2px solid #D40066'}}>
+        <Stack sx={{width: '100%', height: '10%', alignItems: 'center', justifyContent: 'center'}}>
           <img src="./assets/images/logo.svg" alt="Logo" />
         </Stack>
         <Stack sx={{width: '100%', height: '40%', alignItems: 'center', justifyContent: 'space-evenly'}}>
@@ -43,6 +54,25 @@ function AdminMenu({adminMenu, setAdminMenu, selectedOption, setSelectedOption})
             ))
           }
         </Stack>
+        <Box sx={{
+            width: '100%', height: '10%', display: 'flex',
+            alignItems: 'center', justifyContent: 'start',
+            paddingLeft: '25%'
+          }}>
+            <Box
+              sx={{
+                width: '100%', height: '100%', display: 'flex',
+                justifyContent: 'start', alignItems: 'center',
+              }}
+            >
+              <Box sx={{display: 'flex', gap: '10px', cursor: 'pointer'}} onClick={handleSignOut}>
+                <img src="./assets/icons/sign-out.png" alt="" />
+                <Typography sx={{fontWeight: '600'}}>
+                  Sair
+                </Typography>
+              </Box>
+            </Box>
+          </Box>
       </Stack>
     </Stack>
   )

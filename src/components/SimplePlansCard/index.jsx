@@ -34,14 +34,14 @@ function SimplePlansCard() {
               }}
             >
               <img src={`https://planos-backend.onrender.com/assets/${plano.providerLogo}`} alt={plano.provider}/>
-              <Typography variant="h6">
+              <Typography variant="subtitle1" fontWeight="bold">
                 {plano.title}
               </Typography>
             </Box>
             <Box
               sx={{
                 width: '48%', height: '100%',
-                alignItems: 'center', justifyContent: 'center', display: 'flex'
+                alignItems: 'center', justifyContent: 'space-evenly', display: 'flex'
               }}
             >
               <Stack
@@ -50,10 +50,10 @@ function SimplePlansCard() {
                   alignItems: 'start', justifyContent: 'center'
                 }}
               >
-                <Typography sx={{fontWeight: '500'}}>
+                <Typography variant="body1" sx={{fontWeight: '500'}}>
                   {plano.contacts}
                 </Typography>
-                <Typography sx={{color: 'lightGray'}}>
+                <Typography variant="body2" sx={{color: 'lightGray'}}>
                   Contatos
                 </Typography>
               </Stack>
@@ -61,10 +61,10 @@ function SimplePlansCard() {
                 alignItems: 'start', justifyContent: 'center'
                 }}
               >
-                <Typography sx={{fontWeight: '500'}}>
+                <Typography variant="body1" sx={{fontWeight: '500'}}>
                   R$ {plano.cost.toFixed(2)}
                 </Typography>
-                <Typography sx={{color: 'lightGray'}}>
+                <Typography variant="body2" sx={{color: 'lightGray'}}>
                   Total
                 </Typography>
               </Stack>
@@ -72,10 +72,10 @@ function SimplePlansCard() {
                 alignItems: 'start', justifyContent: 'center'
                 }}
               >
-                <Typography sx={{fontWeight: '500'}}>
+                <Typography variant="body1" sx={{fontWeight: '500'}}>
                   {plano.createdAt.slice(0, 10).split('-').reverse().join('/')}
                 </Typography>
-                <Typography sx={{color: 'lightGray'}}>
+                <Typography variant="body2" sx={{color: 'lightGray'}}>
                   Criado em
                 </Typography>
               </Stack>
@@ -96,14 +96,14 @@ function SimplePlansCard() {
             }}
           >
             <img src={`https://planos-backend.onrender.com/assets/${plano.providerLogo}`} alt={plano.provider}/>
-            <Typography variant="h6">
+            <Typography variant="subtitle1" fontWeight="bold">
               {plano.title}
             </Typography>
           </Box>
           <Box
             sx={{
               width: '48%', height: '100%',
-              alignItems: 'center', justifyContent: 'center', display: 'flex'
+              alignItems: 'center', justifyContent: 'space-evenly', display: 'flex'
             }}
           >
             <Stack
@@ -112,10 +112,10 @@ function SimplePlansCard() {
                 alignItems: 'start', justifyContent: 'center'
               }}
             >
-              <Typography sx={{fontWeight: '500'}}>
+              <Typography variant="body1" sx={{fontWeight: '500'}}>
                 {plano.contacts}
               </Typography>
-              <Typography sx={{color: 'lightGray'}}>
+              <Typography variant="body2" sx={{color: 'lightGray'}}>
                 Contatos
               </Typography>
             </Stack>
@@ -123,10 +123,10 @@ function SimplePlansCard() {
               alignItems: 'start', justifyContent: 'center'
               }}
             >
-              <Typography sx={{fontWeight: '500'}}>
+              <Typography variant="body1" sx={{fontWeight: '500'}}>
                 R$ {plano.cost.toFixed(2)}
               </Typography>
-              <Typography sx={{color: 'lightGray'}}>
+              <Typography variant="body2" sx={{color: 'lightGray'}}>
                 Total
               </Typography>
             </Stack>
@@ -134,17 +134,17 @@ function SimplePlansCard() {
               alignItems: 'start', justifyContent: 'center'
               }}
             >
-              <Typography sx={{fontWeight: '500'}}>
+              <Typography variant="body1" sx={{fontWeight: '500'}}>
                 {plano.createdAt.slice(0, 10).split('-').reverse().join('/')}
               </Typography>
-              <Typography sx={{color: 'lightGray'}}>
+              <Typography variant="body2" sx={{color: 'lightGray'}}>
                 Criado em
               </Typography>
             </Stack>
           </Box>
         </Box>
       )))}
-      <Box sx={{width: '100%', height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1%'}}>
+      {search.length > 0 ? <Box></Box> : (<Box sx={{width: '100%', height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1%'}}>
         {Array.from(Array(pages), (item, index) => {
           return <button value={index}
             key={index}
@@ -155,7 +155,7 @@ function SimplePlansCard() {
             }}
           >{index + 1}</button>
         })}
-      </Box>
+      </Box>)}
     </>
   )
 }

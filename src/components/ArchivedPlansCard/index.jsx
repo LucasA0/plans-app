@@ -136,7 +136,7 @@ function ArchivedPlansCard() {
         </Box>
       ))
       )}
-      <Box sx={{width: '100%', height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1%'}}>
+      {search.length > 0 ? <Box></Box> : (<Box sx={{width: '100%', height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1%'}}>
         {Array.from(Array(pages), (item, index) => {
           return <button value={index}
             key={index}
@@ -147,7 +147,7 @@ function ArchivedPlansCard() {
             }}
           >{index + 1}</button>
         })}
-      </Box>
+      </Box>)}
       {
         seeMore && <SeeMore />
       }

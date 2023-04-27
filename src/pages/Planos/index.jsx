@@ -27,8 +27,8 @@ function Planos() {
           <Stack sx={{ width: '60%', height: '100%', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-evenly' }}>
             {checkboxGroup.map((check) => (
               <label
-                style={{ display: 'flex', alignItems: 'center', width: '14%', height: '100%', justifyContent: 'space-evenly',
-                  cursor: 'pointer'
+                style={{ display: 'flex', alignItems: 'center', height: '100%', justifyContent: 'space-evenly',
+                  cursor: 'pointer', width: '16%'
               }}
                 key={check.id}
               >
@@ -39,7 +39,7 @@ function Planos() {
                 {check.name}
               </label>
             ))}
-            <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'space-evenly', width: '20%'}}>
+            <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'space-evenly', width: {sm: '20%', md: '15%'}}}>
               <img src="./assets/icons/Filter.png" alt="filtro" />
               <Typography variant="h7" fontWeight="bold" >Filtrar</Typography>
             </Box>
