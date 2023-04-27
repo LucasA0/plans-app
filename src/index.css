@@ -12,6 +12,17 @@
   scroll-behavior: smooth;
 }
 
+.add-plan-form {
+  width: 410px;
+  height: 580px;
+  overflow-y: auto;
+  position: absolute;
+  top: 10%;
+  left: 40%;
+  border-radius: 12px;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.4)
+}
+
 ::-webkit-scrollbar {
   width: 5px;
   background: transparent;
@@ -95,5 +106,12 @@
   .login-form {
     width: 90%;
     height: 80%;
+  }
+
+  .add-plan-form {
+    width: 370px;
+    height: 700px;
+    left: 0%;
+    right: 50%;
   }
 }

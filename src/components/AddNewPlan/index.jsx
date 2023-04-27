@@ -55,10 +55,8 @@ function AddNewPlan({menuTitle}) {
   }
 
   return (
-    <form onSubmit={handleSubmit} style={{ width: '410px', height: '580px', overflowY: 'auto', position: 'absolute',
-      top: '10%', left: '40%', borderRadius: '12px', boxShadow: '5px 5px 10px rgba(0,0,0,0.4)' }}
-      encType="multipart/form-data">
-      <Stack sx={{ width: '100%', height: menuTitle === 'Editar Plano' ? '1200px' : '1500px'}}>
+    <form onSubmit={handleSubmit} encType="multipart/form-data" className="add-plan-form">
+      <Stack sx={{ width: '100%', height: menuTitle === 'Editar Plano' ? '1450px' : '1800px'}}>
         {/* Caixa da Imagem */}
 
         <Box sx={{position: 'relative', width: '100%', height: '13%'}}>
@@ -81,7 +79,7 @@ function AddNewPlan({menuTitle}) {
         {/* Fim da caixa da imagem */}
 
         {/* Corpo da página */}
-        <Box sx={{ width: '100%', height: '100%', background: 'rgba(255,255,255,0.9)', padding: '3%' }}>
+        <Box sx={{ width: '100%', height: '100%', background: 'rgba(255,255,255,1)', padding: '3%' }}>
           {/* Caixa das operadoras */}
 
             <Box sx={{ width: '100%', height: '15%', display: isEditing ? 'none' : 'flex',
@@ -114,7 +112,7 @@ function AddNewPlan({menuTitle}) {
           {/* Fim da caixa dos inputs */}
 
           {/* Caixa dos apps ilimitados */}
-            <Box sx={{width: '100%', height: menuTitle === 'Editar Plano' ? '15%' : '12%', display: 'flex', flexDirection: 'column', gap: '5%'}}>
+            <Box sx={{width: '100%', height: menuTitle === 'Editar Plano' ? '18%' : '14%', display: 'flex', flexDirection: 'column', gap: '3%'}}>
               <Typography variant="h7" fontWeight="bold">Apps ilimitados</Typography>
               <UnlimitedApps unlimitedApp={unlimitedApp} setUnlimitedApp={setUnlimitedApp} />
             </Box>

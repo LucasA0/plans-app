@@ -12,7 +12,7 @@ function SimplePlans() {
   return (
     <>
       <Box
-        sx={{ width: '100%', height: '500px', display: 'flex', overflowY: 'auto',
+        sx={{ width: '100%', height: {xs: '720px', sm: '500px', md: '500px'}, display: 'flex', overflowY: 'auto',
           flexDirection: 'column', gap: '5%', paddingX: {sm: '2%', md: '1.2%'}, filter: plansMenu ? 'blur(8px)' : '',
         }}
       >
