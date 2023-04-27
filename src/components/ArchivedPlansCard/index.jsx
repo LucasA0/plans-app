@@ -21,119 +21,121 @@ function ArchivedPlansCard() {
     <>
       {search.length > 0 ? (filteredPlans?.map((plano) => (
           <Box
-          key={plano.title}
+          key={plano._id}
           sx={{
-            width: '100%', height: '150px', borderBottom: '1px solid lightGray',
+            width: '100%', height: {xs: '250px', sm: '150px', md: '150px'}, borderBottom: '1px solid lightGray',
             display: 'flex', alignItems: 'center', justifyContent: 'space-between', overflowY: 'auto',
-            filter: editMenu ? 'blur(10px)' : ''
+            filter: editMenu || seeMore ? 'blur(10px)' : '', flexWrap: {xs: 'wrap', sm: 'nowrap', md: 'nowrap'}
           }}
         >
           <Box
-            sx={{ display: 'flex', width: '55%', height: '100%',
-              alignItems: 'center', justifyContent: 'start', gap: '3%'
+            flexDirection={{xs: 'row', sm: 'row', md: 'row'}}
+            sx={{ display: 'flex', width: {xs: '100%', sm: '55%', md: '55%'}, height:{xs: '30%', sm: '100%', md: '100%'},
+              alignItems: 'center', justifyContent: {xs: 'center', sm: 'start', md: 'start'}, gap: {xs: '5%', sm: '3%', md: '3%'}
             }}
           >
             <img src={`https://planos-backend.onrender.com/assets/${plano.providerLogo}`} alt={plano.provider}/>
-            <Typography variant="h7" fontWeight="bold">
+            <Typography variant="subtitle1" fontWeight="bold">
               {plano.title}
             </Typography>
           </Box>
-            <Box sx={{width: '80%', height: '70%', display: 'flex', alignItems: 'center',
+            <Box sx={{width: {xs: '100%', sm: '80%', md: '80%'}, height: {xs: '50%', sm: '70%', md: '70%'}, display: 'flex', alignItems: 'center',
               justifyContent: 'space-evenly', flexWrap: 'wrap'}}>
               <Stack>
-                <Typography variant="h7" fontWeight="bold">R$ {plano.cost.toFixed(2)}</Typography>
-                <Typography variant='span' sx={{color: 'lightGray'}}>Valor</Typography>
+                <Typography variant="body1">R$ {plano.cost.toFixed(2)}</Typography>
+                <Typography variant='body2' sx={{color: 'lightGray'}}>Valor</Typography>
               </Stack>
               <Stack>
-                <Typography variant="h7" fontWeight="bold">{plano.franchise}GB</Typography>
-                <Typography variant='span' sx={{color: 'lightGray'}}>Franquia</Typography>
+                <Typography variant="body1">{plano.franchise}GB</Typography>
+                <Typography variant='body2' sx={{color: 'lightGray'}}>Franquia</Typography>
               </Stack>
               <Stack>
-                <Typography variant="h7" fontWeight="bold">{plano.contacts}</Typography>
-                <Typography variant='span' sx={{color: 'lightGray'}}>Contatos</Typography>
+                <Typography variant="body1">{plano.contacts}</Typography>
+                <Typography variant='body2' sx={{color: 'lightGray'}}>Contatos</Typography>
               </Stack>
               <Stack>
-                <Typography variant="h7" fontWeight="bold">{plano.createdAt.slice(0, 10).split('-').reverse().join('/')}</Typography>
-                <Typography variant='span' sx={{color: 'lightGray'}}>Criado em</Typography>
+                <Typography variant="body1">{plano.createdAt.slice(0, 10).split('-').reverse().join('/')}</Typography>
+                <Typography variant='body2' sx={{color: 'lightGray'}}>Criado em</Typography>
               </Stack>
-              <Stack sx={{width: '75%', height: '45%', alignItems: 'center', justifyContent: 'center',
+              <Stack sx={{width: {sm:'90%', md: '75%'}, height: '45%', alignItems: 'center', justifyContent: 'center',
                 gap: '5%', flexDirection: 'row'}}>
                 <button style={{width: '80px', height: '40px', borderRadius: '10px',
-                  border: 'none', background: '#D40066', color: '#fff', fontWeight: 'bold', cursor: 'pointer'}}
+                  border: 'none', background: '#D40066', color: '#fff', fontWeight: 'medium', cursor: 'pointer'}}
                   onClick={() => handleEditMenu(plano)}
                 >Editar</button>
                 <button style={{width: '120px', height: '40px', borderRadius: '10px',
                   border: '2px solid #D40066', background: 'transparent',
-                  color: '#D40066', fontWeight: 'bold', cursor: 'pointer'}}
+                  color: '#D40066', fontWeight: 'medium', cursor: 'pointer'}}
                   onClick={() => handleSeeMore(plano)}
                   disabled={seeMore ? 'true' : ''}
                 >Ver Detalhes</button>
                 <button style={{width: '120px', height: '40px', borderRadius: '10px',
                   border: '2px solid #D40066', background: 'transparent',
-                  color: '#D40066', fontWeight: 'bold', cursor: 'pointer'}}
+                  color: '#D40066', fontWeight: 'medium', cursor: 'pointer'}}
                   onClick={() => toFile(plano)}
                 >Restaurar</button>
               </Stack>
             </Box>
         </Box>
       ))) : (
-        currentItems?.map((item) => (
+        currentItems?.map((plano) => (
           <Box
-          key={item.title}
-          sx={{
-            width: '100%', height: '150px', borderBottom: '1px solid lightGray',
-            display: 'flex', alignItems: 'center', justifyContent: 'space-between', overflowY: 'auto',
-            filter: editMenu ? 'blur(10px)' : ''
+        key={plano._id}
+        sx={{
+          width: '100%', height: {xs: '250px', sm: '150px', md: '150px'}, borderBottom: '1px solid lightGray',
+          display: 'flex', alignItems: 'center', justifyContent: 'space-between', overflowY: 'auto',
+          filter: editMenu || seeMore ? 'blur(10px)' : '', flexWrap: {xs: 'wrap', sm: 'nowrap', md: 'nowrap'}
+        }}
+      >
+        <Box
+          flexDirection={{xs: 'row', sm: 'row', md: 'row'}}
+          sx={{ display: 'flex', width: {xs: '100%', sm: '55%', md: '55%'}, height:{xs: '30%', sm: '100%', md: '100%'},
+            alignItems: 'center', justifyContent: {xs: 'center', sm: 'start', md: 'start'}, gap: {xs: '5%', sm: '3%', md: '3%'}
           }}
         >
-          <Box
-            sx={{ display: 'flex', width: '55%', height: '100%',
-              alignItems: 'center', justifyContent: 'start', gap: '3%'
-            }}
-          >
-            <img src={`https://planos-backend.onrender.com/assets/${item.providerLogo}`} alt={item.provider}/>
-            <Typography variant="h7" fontWeight="bold">
-              {item.title}
-            </Typography>
-          </Box>
-            <Box sx={{width: '80%', height: '70%', display: 'flex', alignItems: 'center',
-              justifyContent: 'space-evenly', flexWrap: 'wrap'}}>
-              <Stack>
-                <Typography variant="h7" fontWeight="bold">R$ {item.cost.toFixed(2)}</Typography>
-                <Typography variant='span' sx={{color: 'lightGray'}}>Valor</Typography>
-              </Stack>
-              <Stack>
-                <Typography variant="h7" fontWeight="bold">{item.franchise}GB</Typography>
-                <Typography variant='span' sx={{color: 'lightGray'}}>Franquia</Typography>
-              </Stack>
-              <Stack>
-                <Typography variant="h7" fontWeight="bold">{item.contacts}</Typography>
-                <Typography variant='span' sx={{color: 'lightGray'}}>Contatos</Typography>
-              </Stack>
-              <Stack>
-                <Typography variant="h7" fontWeight="bold">{item.createdAt.slice(0, 10).split('-').reverse().join('/')}</Typography>
-                <Typography variant='span' sx={{color: 'lightGray'}}>Criado em</Typography>
-              </Stack>
-              <Stack sx={{width: '75%', height: '45%', alignItems: 'center', justifyContent: 'center',
-                gap: '5%', flexDirection: 'row'}}>
-                <button style={{width: '80px', height: '40px', borderRadius: '10px',
-                  border: 'none', background: '#D40066', color: '#fff', fontWeight: 'bold', cursor: 'pointer'}}
-                  onClick={() => handleEditMenu(item)}
-                >Editar</button>
-                <button style={{width: '120px', height: '40px', borderRadius: '10px',
-                  border: '2px solid #D40066', background: 'transparent',
-                  color: '#D40066', fontWeight: 'bold', cursor: 'pointer'}}
-                  onClick={() => handleSeeMore(item)}
-                  disabled={seeMore ? 'true' : ''}
-                >Ver Detalhes</button>
-                <button style={{width: '120px', height: '40px', borderRadius: '10px',
-                  border: '2px solid #D40066', background: 'transparent',
-                  color: '#D40066', fontWeight: 'bold', cursor: 'pointer'}}
-                  onClick={() => toFile(item)}
-                >Restaurar</button>
-              </Stack>
-            </Box>
+          <img src={`https://planos-backend.onrender.com/assets/${plano.providerLogo}`} alt={plano.provider}/>
+          <Typography variant="subtitle1" fontWeight="bold">
+            {plano.title}
+          </Typography>
         </Box>
+          <Box sx={{width: {xs: '100%', sm: '80%', md: '80%'}, height: {xs: '50%', sm: '70%', md: '70%'}, display: 'flex', alignItems: 'center',
+            justifyContent: 'space-evenly', flexWrap: 'wrap'}}>
+            <Stack>
+              <Typography variant="body1">R$ {plano.cost.toFixed(2)}</Typography>
+              <Typography variant='body2' sx={{color: 'lightGray'}}>Valor</Typography>
+            </Stack>
+            <Stack>
+              <Typography variant="body1">{plano.franchise}GB</Typography>
+              <Typography variant='body2' sx={{color: 'lightGray'}}>Franquia</Typography>
+            </Stack>
+            <Stack>
+              <Typography variant="body1">{plano.contacts}</Typography>
+              <Typography variant='body2' sx={{color: 'lightGray'}}>Contatos</Typography>
+            </Stack>
+            <Stack>
+              <Typography variant="body1">{plano.createdAt.slice(0, 10).split('-').reverse().join('/')}</Typography>
+              <Typography variant='body2' sx={{color: 'lightGray'}}>Criado em</Typography>
+            </Stack>
+            <Stack sx={{width: {sm:'90%', md: '75%'}, height: '45%', alignItems: 'center', justifyContent: 'center',
+              gap: '5%', flexDirection: 'row'}}>
+              <button style={{width: '80px', height: '40px', borderRadius: '10px',
+                border: 'none', background: '#D40066', color: '#fff', fontWeight: 'medium', cursor: 'pointer'}}
+                onClick={() => handleEditMenu(plano)}
+              >Editar</button>
+              <button style={{width: '120px', height: '40px', borderRadius: '10px',
+                border: '2px solid #D40066', background: 'transparent',
+                color: '#D40066', fontWeight: 'medium', cursor: 'pointer'}}
+                onClick={() => handleSeeMore(plano)}
+                disabled={seeMore ? 'true' : ''}
+              >Ver Detalhes</button>
+              <button style={{width: '120px', height: '40px', borderRadius: '10px',
+                border: '2px solid #D40066', background: 'transparent',
+                color: '#D40066', fontWeight: 'medium', cursor: 'pointer'}}
+                onClick={() => toFile(plano)}
+              >Restaurar</button>
+            </Stack>
+          </Box>
+      </Box>
       ))
       )}
       {search.length > 0 ? <Box></Box> : (<Box sx={{width: '100%', height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1%'}}>
