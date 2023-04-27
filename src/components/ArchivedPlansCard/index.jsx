@@ -4,13 +4,13 @@ import { PlansContext } from '../../contexts/Plans/PlansContext';
 import SeeMore from '../SeeMore';
 
 function ArchivedPlansCard() {
-  const [itemsPerPage, setItemsPerPage] = useState(3);
+  const [itemsPerPage, setItemsPerPage] = useState(2);
   const [currentPage, setCurrentPage] = useState(0);
 
   const {allPlans, search , editMenu, seeMore, handleSeeMore, handleEditMenu, toFile, setSeeMore, planInfo} = useContext(PlansContext)
 
   const archivedPlans = allPlans?.filter(plan => plan.archived)
-  let filteredPlans = search.length > 0 ? allPlans?.filter(plan => plan.title.includes(search)) : []
+  let filteredPlans = search.length > 0 ? archivedPlans?.filter(plan => plan.title.includes(search)) : []
 
   const pages = Math.ceil(archivedPlans?.length / itemsPerPage);
   const startIndex = currentPage * itemsPerPage;

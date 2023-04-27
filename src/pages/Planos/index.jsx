@@ -13,7 +13,7 @@ function Planos() {
     <>
       <Box
         sx={{ width: '100%', height: '1200px', display: 'flex', flexDirection: 'column',
-          paddingX: '7%', justifyContent: 'center', alignItems: 'center'}}
+          paddingX: {md: '1.2%'}, justifyContent: 'center', alignItems: 'center'}}
       >
         <Stack direction="row"
           sx={{
@@ -45,7 +45,7 @@ function Planos() {
             </Box>
           </Stack>
         </Stack>
-        {loading === true ? <Loading /> : <Box sx={{width: '100%', height: '500px'}}>
+        {loading === true ? <Loading /> : <Box sx={{width: '100%', height: '500px', overflowY: 'auto'}}>
           <CompletePlansCard />
         </Box>}
 
@@ -65,7 +65,7 @@ function Planos() {
             </Typography>
           </Stack>
         </Stack>
-        {loading === true ? <Loading /> : <Box sx={{width: '100%', height: '500px', display: hide === true ? 'block' : 'none'}}>
+        {loading === true ? <Loading /> : <Box sx={{width: '100%', height: '350px', display: hide === true ? 'block' : 'none', overflowY: 'auto'}}>
           <ArchivedPlansCard />
         </Box>}
       </Box>

@@ -10,7 +10,7 @@ function CompletePlansCard() {
   const {allPlans, search , editMenu, seeMore, handleSeeMore, handleEditMenu, toFile, isEditing} = useContext(PlansContext)
 
   let unarchivedPlans = allPlans?.filter(plan => !plan.archived)
-  let filteredPlans = search.length > 0 ? allPlans?.filter(plan => plan.title.includes(search)) : []
+  let filteredPlans = search.length > 0 ? unarchivedPlans?.filter(plan => plan.title.includes(search)) : []
 
   const pages = Math.ceil(unarchivedPlans?.length / itemsPerPage);
   const startIndex = currentPage * itemsPerPage;
@@ -33,7 +33,7 @@ function CompletePlansCard() {
               alignItems: 'center', justifyContent: 'start', gap: '3%'
             }}
           >
-            {planos.providerLogo ? (<img src={`https://planos-backend.onrender.com/assets/${plano.providerLogo}`} style={{maxWidth: '100px', maxHeight: '100px'}} alt={plano.provider}/>):
+            {plano.providerLogo ? (<img src={`https://planos-backend.onrender.com/assets/${plano.providerLogo}`} style={{maxWidth: '100px', maxHeight: '100px'}} alt={plano.provider}/>):
             (<img src='./assets/icons/nao-ha-fotos.png' style={{maxWidth: '100px', maxHeight: '100px'}}/>)}
             <Typography variant="h7" fontWeight="medium">
               {plano.title}

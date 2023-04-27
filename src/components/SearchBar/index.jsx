@@ -1,4 +1,4 @@
-import {OutlinedInput, InputAdornment, Button, FormControl} from '@mui/material'
+import {OutlinedInput, InputAdornment, FormControl} from '@mui/material'
 import { useContext } from 'react'
 import { PlansContext } from '../../contexts/Plans/PlansContext'
 
@@ -19,9 +19,6 @@ function SearchBar() {
           }
         />
         </FormControl>
-      <Button variant="outlined" sx={{borderColor: '#000', color: '#000', border: '2px solid'}}>
-        Admin
-      </Button>
     </>
   )
 }

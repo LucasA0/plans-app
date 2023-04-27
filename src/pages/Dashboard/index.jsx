@@ -17,18 +17,20 @@ function Dashboard() {
       <Stack sx={{ width: {xs: '90%', sm: '90%', md:'73%'}, height: '100vh', margin: {xs: '0 auto', sm: '0 auto', md: '0px'}}}>
         <Box sx={{ width: '100%', height: '10%', padding: '1%'}}>
           <Stack direction="row" sx={{ width: '100%', height: '100%',
-            justifyContent: 'center', alignItems: 'center', gap: '10%', position: 'relative'
+            justifyContent: 'space-between', alignItems: 'center', position: 'relative'
           }}
           >
-            <Box sx={{width: '50px', height: '50px', position: 'absolute', left: '5px', display: {xs: 'block', sm: 'block', md: 'none'}}}>
+            <Box sx={{width: '50px', height: '50px', position: 'absolute', left: '0', top: '25%' , display: {xs: 'block', sm: 'block', md: 'none'}}}>
               <RiMenu2Line style={{width: '50px', height: '35px', cursor: 'pointer'}} onClick={() => setAdminMenu(!adminMenu)}/>
             </Box>
             {
-              adminMenu && <AdminMenu adminMenu={adminMenu} setAdminMenu={setAdminMenu} />
+              adminMenu && <AdminMenu adminMenu={adminMenu} setAdminMenu={setAdminMenu} selectedOption={selectedOption} setSelectedOption={setSelectedOption} />
             }
-            <Typography variant='h5' sx={{ fontWeight: '600', alignSelf: 'flex-end'}}>
-              {selectedOption}
-            </Typography>
+            <Stack sx={{width: {sm: '35%', md: '20%'}, height: '100%', alignItems: 'center', justifyContent: 'center'}}>
+              <Typography variant='h5' fontWeight="bold" sx={{alignSelf: {sm: 'flex-end', md: 'flex-start'}}}>
+                {selectedOption}
+              </Typography>
+            </Stack>
             <SearchBar />
           </Stack>
         </Box>

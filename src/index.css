@@ -62,8 +62,8 @@
 }
 
 #admin-menu {
-  animation: slide-right 0.5s ease-in-out;
-  transition: 0.5s;
+  animation: slide-right 0.5s ease-in-out both;
+  transition: 0.5s ease-in-out;
 }
 
 @keyframes slide-left {
