@@ -24,7 +24,7 @@ function SimplePlansCard() {
           <Box
             key={plano.title}
             sx={{
-              width: '100%', height: {xs: '250px', sm: '100px', md: '100px'}, borderBottom: '1px solid lightGray',
+              width: '100%', height: {xs: '319px', sm: '100px', md: '100px'}, borderBottom: '1px solid lightGray',
               display: 'flex', alignItems: 'center', justifyContent: 'space-between',
             }}
           >
