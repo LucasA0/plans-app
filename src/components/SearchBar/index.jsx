@@ -8,7 +8,7 @@ function SearchBar() {
 
   return (
     <>
-      <FormControl variant="outlined" sx={{width: '50%'}}>
+      <FormControl variant="outlined" sx={{width: {xs: '45%', sm:'50%', md: '50%'}}}>
         <OutlinedInput id="input-with-icon-adornment" onChange={(e) => setSearch(e.target.value)} placeholder="Pesquisar" sx={{borderRadius: '20px'}}
           startAdornment={
             <InputAdornment position="start"

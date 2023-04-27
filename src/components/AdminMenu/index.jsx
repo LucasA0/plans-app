@@ -21,7 +21,7 @@ function AdminMenu({adminMenu, setAdminMenu, selectedOption, setSelectedOption})
   }
 
   return (
-    <Stack sx={{width: {xs: '70%', sm: '50%'}, height: '650px', alignItems: 'center', justifyContent: 'space-between',
+    <Stack sx={{width: {xs: '95%', sm: '50%'}, height: '650px', alignItems: 'center', justifyContent: 'space-between',
       background: 'linear-gradient(180deg, #D5A595 0%, #F5E0D9 100%);', position: 'fixed', top: '-10px', left: '-50px',
       zIndex: '999999', borderRadius: '8px',boxShadow: '0px 1px 10px rgba(0, 0, 0, 0.3)' }}
       id='admin-menu'

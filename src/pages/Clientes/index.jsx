@@ -30,7 +30,7 @@ function Clientes() {
   return (
     <>
       <Box
-        sx={{ width: '100%', height: '1200px', display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly',
+        sx={{ width: '100%', height: '700px', display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly',
         alignItems: 'center', paddingX: {md: '1%'}}}
       >
         <Stack direction="row"

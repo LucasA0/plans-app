@@ -23,7 +23,6 @@ function ClientsCard({clients}) {
     setShowMore(!showMore)
     setClientId(client._id)
     setPlanData(allPlans.filter(plan => plan._id.includes(client.plan)))
-    console.log(client)
     if(showMore) {
       setClientId('')
     }
@@ -142,6 +141,7 @@ function ClientsCard({clients}) {
               width: '30px', height: '30px', cursor: 'pointer', border: 'none', color: '#fff', background: '#D40066',
               borderRadius: '8px'
             }}
+            key={index}
           >{index + 1}</button>
         })}
       </Box>
